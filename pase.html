@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to bottom right, #282c34, #ffffff);
+            font-family: 'Arial', sans-serif;
+            color: #000000;
+        }
+
+        .mensaje {
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            display: none;
+            font-size: 15px;
+            word-wrap: break-word; /* Añadido para ajustar el texto al ancho del contenedor */
+        }
+    </style>
+    <title>Mensaje Especial</title>
+</head>
+<body>
+    <div class="mensaje">
+        <h1>Al igual que una flor que enfrenta la oscuridad de la tierra para florecer hacia la luz,</h1> <h1>recordemos que nuestros desafíos nos fortalecen. </h1> <h1>Seamos como la flor, encontrando la fuerza para renacer y florecer con belleza y gracia en cada etapa de la vida. 🌸✨</h1>     
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Mostrar el mensaje después de un breve tiempo
+            setTimeout(function() {
+                document.querySelector('.mensaje').style.display = 'block';
+                setTimeout(function() {
+                    window.location.href = "flores.html";
+                }, 15000);
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

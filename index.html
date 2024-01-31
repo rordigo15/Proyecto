@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to bottom right, #282c34, #ffffff); /* Fondo degradado desde un gris oscuro (#282c34) hasta blanco (#ffffff) */
+            font-family: 'Arial', sans-serif;
+            color: #000000; /* Texto en color blanco */
+        }
+
+        .mensaje {
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con un poco de transparencia */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            display: none;
+        }
+    </style>
+    <title>Mensaje Especial</title>
+</head>
+<body>
+    <div class="mensaje" id="mensaje">
+        <h1 id="hola"></h1>     
+    </div>
+
+    <div class="mensaje" id="mensaje2">
+        <p id="mensajeTexto"></p>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Mensaje 1 - Letras
+            let mensaje1 = "HOLA :,)";
+            let elementoMensaje1 = document.getElementById("hola");
+
+            let i = 0;
+            function mostrarLetrasMensaje1() {
+                if (i < mensaje1.length) {
+                    elementoMensaje1.innerText += mensaje1[i];
+                    i++;
+                    setTimeout(mostrarLetrasMensaje1, 1000);
+                } else {
+                    // Después de mostrar el mensaje 1, esperar 2 segundos antes de mostrar el mensaje 2
+                    setTimeout(function() {
+                        document.getElementById("mensaje").style.display = "none";
+                        document.getElementById("mensaje2").style.display = "block";
+
+                        // Mensaje 2 - Mostrar toda la frase
+                        let mensaje2 = "SOLO QUIERO DECIRTE QUE...";
+                        let elementoMensaje2 = document.getElementById("mensajeTexto");
+
+                        elementoMensaje2.innerText = mensaje2;
+
+                        // Redirigir a corazon.html después de mostrar el mensaje 2
+                        setTimeout(function() {
+                            window.location.href = "corazon.html";
+                        }, 4000);
+                        
+                    }, 2000);
+                }
+            }
+
+            // Iniciar el proceso para mostrar letras del mensaje 1
+            document.getElementById("mensaje").style.display = "block";
+            mostrarLetrasMensaje1();
+        });
+    </script>
+</body>
+</html>
